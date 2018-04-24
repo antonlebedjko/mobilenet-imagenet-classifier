@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fi.aalto.cs.sipi.MainActivity"
+    android:keepScreenOn="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/framework_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/framework_buttons_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Start neural network framework:"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+        <LinearLayout
+            android:id="@+id/framework_buttons_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <Button
+                android:id="@+id/snpe_button"
+                android:text="Snapdragon Neural Processing Engine"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:onClick="launchSNPE"
+                android:textColor="@color/qualcommBlue"
+                android:textAppearance="@android:style/TextAppearance.Medium"/>
+            <LinearLayout
+                android:id="@+id/tf_buttons_group"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/tf_button"
+                    android:text="TensorFlow"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:onClick="launchTensorFlowFull"
+                    android:textColor="@color/tensorflowOrange"
+                    android:textAppearance="@android:style/TextAppearance.Large" />
+                <Button
+                    android:id="@+id/tf_lite_button"
+                    android:text="TensorFlow Lite"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:onClick="launchTensorFlowLite"
+                    android:textColor="@color/tensorflowLightOrange"
+                    android:textAppearance="@android:style/TextAppearance.Large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/options_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Options:"
+            android:layout_marginTop="15dp"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+        <LinearLayout
+            android:id="@+id/options_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/grayBlueLight"
+            android:layout_margin="5dp">
+            <CheckBox
+                android:id="@+id/check_snpe_gpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPU acceleration (Snapdragon NPE only)"
+                android:checked="true"
+                android:padding="5dp" />
+            <CheckBox
+                android:id="@+id/check_split_timings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verbose output (show latencies)"
+                android:checked="false"
+                android:padding="5dp" />
+            <CheckBox
+                android:id="@+id/check_fixed_exposure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fixed camera shutter speed (1/60s)"
+                android:checked="false"
+                android:padding="5dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/additional_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_below="@id/framework_buttons">
+        <Button
+            android:id="@+id/cache_button"
+            android:text="Clear cache and data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clearData"
+            android:textAppearance="@android:style/TextAppearance.Small" />
+        <TextView
+            android:id="@+id/cache_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Small" />
+        <Button
+            android:id="@+id/restart_button"
+            android:text="Restart app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="relaunch"
+            android:textAppearance="@android:style/TextAppearance.Small" />
+    </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

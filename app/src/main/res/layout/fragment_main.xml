@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+        <LinearLayout
+            android:id="@+id/model_overview_labels_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/grayBlueLight">
+            <TextView
+                android:id="@+id/model_overview_name_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.17"
+                android:gravity="left"
+                android:text="Model:"
+                android:textAppearance="@android:style/TextAppearance.Small"/>
+            <TextView
+                android:id="@+id/model_overview_name_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:gravity="left"
+                android:textAppearance="@android:style/TextAppearance.Small"/>
+
+            <Button
+                android:id="@+id/reload_runtime_button"
+                android:text="Reload net"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                android:textAppearance="@android:style/TextAppearance.Small"/>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/classifications_scroller"
+            android:layout_below="@id/model_overview_labels_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"
+            android:fillViewport="true">
+            <TextView
+                android:id="@+id/model_overview_classification_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minLines="8"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"
+                android:gravity="start"/>
+        </HorizontalScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:id="@+id/timings_scroller_wrapper"
+            android:layout_below="@id/classifications_scroller">
+        <ScrollView
+            android:id="@+id/timings_scroller"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fillViewport="true">
+            <TextView
+                android:id="@+id/model_overview_timings_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorAccent"/>
+        </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/image_input_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Input images from:"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/load_thumbs_button"
+                android:text="Image files"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"/>
+            <Button
+                android:id="@+id/launch_camera_button"
+                android:text="Camera"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="or use sample images:"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/camera_options_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/grayBlueLight"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Tap the preview to classify current picture"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+        <CheckBox
+            android:id="@+id/check_continuous_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continuous classify"
+            android:checked="false"/>
+    </LinearLayout>
+    <TextureView
+        android:id="@+id/cam_textureview"
+        android:layout_width="480px"
+        android:layout_height="640px"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <GridView
+        android:id="@+id/image_grid"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:drawSelectorOnTop="true"
+        android:focusable="true"
+        android:horizontalSpacing="0dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"/>
+</LinearLayout>

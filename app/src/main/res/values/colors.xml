@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="colorPrimary">#69b343</color>
+    <color name="colorPrimaryDark">#308010</color>
+    <color name="colorAccent">#fefefe</color>
+    <color name="grayBlue">#cfd8dc</color>
+    <color name="grayBlueLight">#dfe8ec</color>
+    <color name="qualcommBlue">#3e69b3</color>
+    <color name="tensorflowOrange">#f09010</color>
+    <color name="tensorflowLightOrange">#ff9f1f</color>
+</resources>
