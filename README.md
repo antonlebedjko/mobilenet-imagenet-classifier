@@ -6,11 +6,9 @@ A more user-friendly demo version of the Android app that I developed for the ex
 
 To reduce repository size and avoid possible license issues, framework libraries and neural net model files are not included here. The app can be modified to use basically any image classification model, but the demo uses *MobileNet* trained with 1000-class ImageNet dataset (see details below).
 
-Contact me if you want a copy of the final APK or model files.
-
 **Neural Net frameworks:**
 
-*Snapdragon NPE* manually downloaded from [Qualcomm website](https://developer.qualcomm.com/software/snapdragon-neural-processing-engine-ai) (requires registration)
+*Snapdragon NPE* manually downloaded from [Qualcomm website](https://developer.qualcomm.com/software/snapdragon-neural-processing-engine-ai) (requires registration). Note: the app was developed using SNPE version 1.10 (tested up to 1.13) so with newer versions might not work anymore
 
 *TensorFlow* and *TensorFlow Lite* compiled at build time from [Google's Maven repo](https://bintray.com/google/tensorflow)
 
